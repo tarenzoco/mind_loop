@@ -1,0 +1,15 @@
+<!-- save-as: public/icons/brand-orb.svg -->
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <defs>
+    <radialGradient id="g" cx="30%" cy="30%">
+      <stop offset="0%" stop-color="#7b5af7"></stop>
+      <stop offset="60%" stop-color="#4f46e5"></stop>
+      <stop offset="100%" stop-color="#0f172a"></stop>
+    </radialGradient>
+  </defs>
+  <rect width="100%" height="100%" rx="160" fill="#071023"></rect>
+  <circle cx="512" cy="420" r="320" fill="url(#g)" opacity="0.98"></circle>
+  <g opacity="0.08">
+    <circle cx="360" cy="300" r="90" fill="#fff"></circle>
+  </g>
+</svg>
