@@ -5,12 +5,12 @@
   },
   "version": "0.1.0",
   "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "postinstall": "npx --yes @next/swc-linux-x64-gnu || true",
-    "build": "next build",
-    "start": "next start",
-    "lint": "eslint"
+ "scripts": {
+  "dev": "next dev",
+  "build": "NEXT_SKIP_NATIVE_BUILD=true next build",
+  "start": "next start",
+  "lint": "next lint",
+  "postinstall": "next telemetry disable || true"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.77.0",
