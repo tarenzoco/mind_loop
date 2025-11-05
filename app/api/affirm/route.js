@@ -10,7 +10,12 @@ const sampleAffirmations = [
 
 export async function POST(req) {
   try {
-    const { prompt } = await req.json();
+    let { prompt } = await req.json();
+
+    // 🧹 Clean up any unwanted instruction text if it sneaks in
+    if (prompt) {
+      prompt = prompt.replace(/Return them each on a separate line.?:?/gi, "").trim();
+    }
 
     const randomSet = Array.from({ length: 3 }, () =>
       sampleAffirmations[Math.floor(Math.random() * sampleAffirmations.length)]
@@ -25,6 +30,9 @@ export async function POST(req) {
     });
   } catch (error) {
     console.error("Affirmation Error:", error);
-    return NextResponse.json({ error: "Failed to generate affirmations." }, { status: 500 });
+    return NextResponse.json(
+      { error: "Failed to generate affirmations." },
+      { status: 500 }
+    );
   }
 }
